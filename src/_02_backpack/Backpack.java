@@ -13,7 +13,11 @@ public class Backpack {
 		// Your mission is to go to school.
 		// 1. First you need to put all your supplies into your backpack - use
 		// the putInBackpack(...) methods
-
+		
+		putInBackpack(pencil);
+		putInBackpack(ruler);
+		putInBackpack(textbook);
+		
 		goToSchool();
 	}
 
@@ -37,7 +41,7 @@ public class Backpack {
 	private void log(Supply supply) {
 		String description;
 		if (supply == null) {
-			description = "null";
+			description = "all of your supplies";
 		} else {
 			description = supply.getClass().getSimpleName().toLowerCase();
 		}
