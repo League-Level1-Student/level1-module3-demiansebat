@@ -51,7 +51,7 @@ public class Backpack {
 
 	public void goToSchool() {
 		if (pencil == null || ruler == null || textbook == null) {
-			System.out.println("ERROR: You are not ready for School!");
+			
 		} else {
 			System.out.println("Congratulations! You are ready for school");
 		}
