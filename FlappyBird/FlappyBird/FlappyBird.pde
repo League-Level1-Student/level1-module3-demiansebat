@@ -1,3 +1,4 @@
+int pipegap= 100;
 int birdx= 5;
 int birdy= 0;
 int birdYVelocity = 30;
@@ -17,9 +18,17 @@ birdy+=gravity;
 fill(121,127,134);
 rect(pipex,0,150,uppipeheight);
 fill(121,127,134);
-rect(pipex,300,150,200);
+rect(pipex,uppipeheight+pipegap,150,500-(uppipeheight+ pipegap));
+fill(255,0,0);
+rect(0,475,500,25);
 pipex--;
 teleportPipes();
+if(intersectsPipes()==true){
+ exit();
+}
+if( birdy>=475){
+  exit();
+}
 }
 void mousePressed(){
 birdy-= birdYVelocity;
@@ -29,4 +38,11 @@ void teleportPipes(){
     pipex=500;
     uppipeheight = (int) random(100, 300);
   }
+}
+boolean intersectsPipes() {
+     if (birdy < uppipeheight && birdx > pipex && birdx < (pipex+150)){
+          return true; }
+     else if (birdy>uppipeheight+pipegap && birdx > pipex && birdx < (pipex+150)) {
+          return true; }
+     else { return false; }
 }
