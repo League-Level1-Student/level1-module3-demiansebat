@@ -52,3 +52,8 @@ void keyPressed(){
    }
    return true;
  }
+ void display()
+  {
+    fill(0,25,0);
+    rect(0 , 20,  70, 50);
+  }
